@@ -26,23 +26,6 @@ import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
 public class Auton extends LinearOpMode {
 private DcMotor leftmotor;
 private DcMotor rightmotor;
-private Servo clawServo;
-private Servo armServo;
-
-//Servo restriction
-private static final double CLAW_MIN = -0.8;
-private static final double CLAW_MAX = 0.5;
-
-private static final double ARM_MIN = -0.5;
-private static final double ARM_MAX = 0.8;
-
-// Current actual position of each servo (since we move gradually)
-private double clawCurrentPos;
-private double armCurrentPos;
-
-// Where we want the servo to end up
-private double clawTargetPos;
-private double armTargetPos;
 
 
 @Override
@@ -52,10 +35,6 @@ rightmotor = hardwareMap.get(DcMotor.class, "right");
 leftmotor.setDirection(DcMotor.Direction.REVERSE);
 leftmotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 rightmotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-
-clawServo = hardwareMap.get(Servo.class, "claw");
-armServo = hardwareMap.get(Servo.class, "arm");
-
 
 telemetry.addData("Status", "Initialized");
 telemetry.update();
@@ -72,17 +51,6 @@ leftmotor.setPower(0.97);
 rightmotor.setPower(1);
 
 sleep(1590);
-
-clawServo.setPosition(0.1);
-armServo.setPosition(0.1);
-
-leftmotor.setPower(0);
-rightmotor.setPower(1);
-
-sleep(500);
-
-clawServo.setPosition(0.9);
-armServo.setPosition(0.9);
 
 leftmotor.setPower(1);
 rightmotor.setPower(1);
