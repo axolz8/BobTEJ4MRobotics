@@ -17,7 +17,7 @@ public void init() {
 leftmotor = hardwareMap.get(DcMotor.class, "left");
 rightmotor = hardwareMap.get(DcMotor.class, "right");
 leftmotor.setDirection(DcMotor.Direction.REVERSE);
-
+}
 @Override
 public void loop() {
 double y = -gamepad1.left_stick_y;
@@ -30,6 +30,5 @@ double rightmotorpower = (y - x)*0.4;
 leftmotor.setPower(leftmotorpower);
 rightmotor.setPower(rightmotorpower);
 
-}
 }
 }
