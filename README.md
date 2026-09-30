@@ -1,4 +1,4 @@
-# 🤖 Eric - Team Bob (TEJ4M-1C)
+# 🤖 Team Bob (TEJ4M-1C)
 
 Welcome to the official code repository for **Team Bob's** robot.
 
