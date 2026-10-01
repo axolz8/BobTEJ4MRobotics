@@ -22,10 +22,21 @@ leftmotor.setDirection(DcMotor.Direction.REVERSE);
 public void loop() {
 double y = -gamepad1.left_stick_y;
 double x = gamepad1.left_stick_x;
+double z = gamepad1.right_stick_x
+//right stick should have the priortiy above the variable x in terms of controlling the motor's power
+//0.6 decreases the power of the motors, it caps the power at 60%
 
-//0.4 decreases the power of the motors, it caps the power at 40%
-double leftmotorpower = (y + x)*0.4;
-double rightmotorpower = (y - x)*0.4;
+/*
+if x != 0 {
+
+
+}
+
+
+*/
+
+double leftmotorpower = (y + x)*0.6;
+double rightmotorpower = (y - x)*0.6;
 
 leftmotor.setPower(leftmotorpower);
 rightmotor.setPower(rightmotorpower);
@@ -35,6 +46,7 @@ rightmotor.setPower(rightmotorpower);
 /*
 TO:DO
 Turning is sensitive
-More power for motors
 Kevin suggested a deadzone
+Make it so that left stick controls the motors both horizontally and vertically but right stick only controls the motors horizontally 
+but has the priority to control the motors horizontally over left stick
 */
