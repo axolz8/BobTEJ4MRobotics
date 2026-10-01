@@ -47,48 +47,40 @@ if (opModeIsActive()) {
 telemetry.addData("Status", "Running");
 telemetry.update();
 
-leftmotor.setPower(0.97);
+leftmotor.setPower(1);
 rightmotor.setPower(1);
 
-sleep(1590);
+sleep(1000);
+
+leftmotor.setPower(1) ;
+rightmotor.setPower(-1);
+
+sleep(1000);
 
 leftmotor.setPower(1);
 rightmotor.setPower(1);
 
-sleep(500);
+sleep(1000);
 
-leftmotor.setPower(0);
-rightmotor.setPower(1);
+leftmotor.setPower(1);
+rightmotor.setPower(-1);
 
-sleep(450);
+sleep(1000);
 
 leftmotor.setPower(1);
 rightmotor.setPower(1);
 
-sleep(850);
+sleep(1000);
 
 leftmotor.setPower(1);
-rightmotor.setPower(0);
+rightmotor.setPower(-1);
 
-sleep(400);
+sleep(1000);
 
 leftmotor.setPower(1);
 rightmotor.setPower(1);
-
+//one second is just a placeholder for now.Have to test if its enough for the robot to turn approximately 90 degrees
 sleep(200);
-
-leftmotor.setPower(1);
-rightmotor.setPower(0);
-
-sleep(400);
-
-leftmotor.setPower(1);
-rightmotor.setPower(1);
-
-sleep(700);
-
-leftmotor.setPower(0);
-rightmotor.setPower(0);
 
 }
 }
