@@ -32,3 +32,9 @@ rightmotor.setPower(rightmotorpower);
 
 }
 }
+/*
+TO:DO
+Turning is sensitive
+More power for motors
+Kevin suggested a deadzone
+*/
