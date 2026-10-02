@@ -60,7 +60,3 @@ rightmotor.setPower(rightmotorpower);
 
 }
 }
-/*
-TO:DO
-Turning is sensitive
-*/
