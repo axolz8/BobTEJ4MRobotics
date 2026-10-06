@@ -10,12 +10,14 @@ public class Teleop extends OpMode {
 
 private DcMotor leftmotor;
 private DcMotor rightmotor;
+private DcMotor outtakemotor;
 private static final double TRIGGER_THRESHOLD = 0.5;
 
 @Override
 public void init() {
 leftmotor = hardwareMap.get(DcMotor.class, "left");
 rightmotor = hardwareMap.get(DcMotor.class, "right");
+outtakemotor = hardwareMap.get(DcMotor.class, "out-take");
 leftmotor.setDirection(DcMotor.Direction.REVERSE);
 }
 @Override
@@ -23,6 +25,7 @@ public void loop() {
 double rawY = -gamepad1.left_stick_y;
 double rawX = gamepad1.left_stick_x;
 double z = gamepad1.right_stick_x;
+double o = -gamepad1.right_trigger; 
 
 
 double y;
@@ -51,12 +54,12 @@ horiTurn = z;
    
 double adjustedTurn = horiTurn * 0.5;
 
-   
+double outtakemotorpower = (o);
 double leftmotorpower  = (y + adjustedTurn) * 0.6;
 double rightmotorpower = (y - adjustedTurn) * 0.6;
 
 leftmotor.setPower(leftmotorpower);
 rightmotor.setPower(rightmotorpower);
-
+outtakemotor.setPower(outtakemotorpower);
 }
 }
