@@ -25,8 +25,15 @@ public void loop() {
 double rawY = -gamepad1.left_stick_y;
 double rawX = gamepad1.left_stick_x;
 double z = gamepad1.right_stick_x;
-double o = -gamepad1.right_trigger; 
+double rawO = -gamepad1.right_trigger; 
 
+
+double o;
+if (Math.abs(rawO) < 0.05) {
+o = 0.0;
+}else {
+o = rawO;
+}
 
 double y;
 if (Math.abs(rawY) < 0.05) {
@@ -62,4 +69,12 @@ leftmotor.setPower(leftmotorpower);
 rightmotor.setPower(rightmotorpower);
 outtakemotor.setPower(outtakemotorpower);
 }
+
 }
+
+
+//PLANS: 
+/*
+Update the Auton.java for the outtake motor
+Power the motors up since gear ratio is higher now
+*/
