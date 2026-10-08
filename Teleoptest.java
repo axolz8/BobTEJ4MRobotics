@@ -62,8 +62,8 @@ horiTurn = z;
 double adjustedTurn = horiTurn * 0.5;
 
 double outtakemotorpower = (o);
-double leftmotorpower  = (y + adjustedTurn) * 0.6;
-double rightmotorpower = (y - adjustedTurn) * 0.6;
+double leftmotorpower  = (y + adjustedTurn) * 0.7;
+double rightmotorpower = (y - adjustedTurn) * 0.7;
 
 leftmotor.setPower(leftmotorpower);
 rightmotor.setPower(rightmotorpower);
@@ -72,9 +72,3 @@ outtakemotor.setPower(outtakemotorpower);
 
 }
 
-
-//PLANS: 
-/*
-Update the Auton.java for the outtake motor
-Power the motors up since gear ratio is higher now
-*/

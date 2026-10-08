@@ -32,7 +32,9 @@ private DcMotor rightmotor;
 public void runOpMode() {
 leftmotor = hardwareMap.get(DcMotor.class, "left");
 rightmotor = hardwareMap.get(DcMotor.class, "right");
+outtakemotor = hardwareMap.get(DcMotor.class, "outtake");
 leftmotor.setDirection(DcMotor.Direction.REVERSE);
+outtakemotor.setDirection(DcMotor.Direction.REVERSE);
 leftmotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 rightmotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
